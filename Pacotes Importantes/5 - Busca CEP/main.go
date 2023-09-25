@@ -27,8 +27,8 @@ func main() {
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Erro ao fazer requisicao: %v\n", err)
 		}
-		defer req.Body.Close()
 		res, err := io.ReadAll(req.Body)
+		defer req.Body.Close()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Erro ao ler a resposta: %v\n", err)
 		}
@@ -38,10 +38,10 @@ func main() {
 			fmt.Fprintf(os.Stderr, "Erro ao fazer o parse da resposta: %v\n", err)
 		}
 		file, err := os.Create("cidade.txt")
+		defer file.Close()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Erro ao criar arquivo: %v\n", err)
 		}
-		defer file.Close()
 		_, err = file.WriteString(fmt.Sprintf("CEP: %s, Localidade: %s, UF: %s\n", data.Cep, data.Localidade, data.Uf))
 	}
 }
