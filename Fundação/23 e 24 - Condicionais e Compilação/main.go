@@ -31,3 +31,5 @@ func main() {
 		println("d")
 	}
 }
+
+// 24 - Para compilar um código em Go, utilizar comando go build, caso não tenha um módulo criado pode-se usar go build main.go, irá gerar o binário main.exe
