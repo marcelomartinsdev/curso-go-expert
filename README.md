@@ -1,4 +1,4 @@
-# ![Logo do Curso](https://events-fullcycle.s3.amazonaws.com/events-fullcycle/media/images/38b8a48cfa0147f4b6ad0efb0e06516a.png) Curso Go Expert
+# ![Logo do Curso](https://events-fullcycle.s3.amazonaws.com/events-fullcycle/media/images/38b8a48cfa0147f4b6ad0efb0e06516a.png)
 
 Este repositório contém os materiais e projetos desenvolvidos durante o **Curso Go Expert**, que teve início em **27 de agosto de 2023** por mim. O curso aborda a linguagem de programação Go em vários módulos, cada um focado em um aspecto diferente da linguagem e do desenvolvimento de aplicativos.
 
