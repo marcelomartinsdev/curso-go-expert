@@ -20,16 +20,16 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
 	// Loga o início da requisição.
-	log.Println("Request Iniciada!")
+	log.Println("Request Iniciada! (log.Println)")
 
 	// Atrasa a execução por 5 segundos (simulando uma operação demorada).
 	select {
 	case <-time.After(5 * time.Second):
 		// Imprime no console (stdout) para fins de registro.
-		log.Println("Request processada com sucesso!")
+		log.Println("Request processada com sucesso! (log.Println)")
 
 		// Escreve no navegador do cliente a resposta de sucesso.
-		w.Write([]byte("Request processada com sucesso!"))
+		w.Write([]byte("Request processada com sucesso! (w.Write)"))
 
 	case <-ctx.Done():
 		// Se o contexto for cancelado antes que o atraso expire, isso pode ocorrer
@@ -37,12 +37,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		// então tratamos isso aqui.
 
 		// Imprime no console (stdout) para fins de registro.
-		log.Println("Request cancelada pelo cliente!")
+		log.Println("Request cancelada pelo cliente! (log.Println)")
 
 		// Escreve no navegador do cliente uma resposta de erro indicando que a
 		// solicitação foi cancelada pelo cliente, usando o código de status HTTP 408
 		// (Request Timeout).
-		http.Error(w, "Request cancelada pelo cliente!", http.StatusRequestTimeout)
+		http.Error(w, "Request cancelada pelo cliente! (w.Write)", http.StatusRequestTimeout)
 	}
 
 	// Loga o final da requisição (isso é executado independentemente de sucesso
